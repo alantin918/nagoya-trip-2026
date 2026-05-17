@@ -307,7 +307,8 @@
         <!-- 頁籤切換 -->
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('tab-5days')">5天4夜 悠閒版</button>
-            <button class="tab-btn" onclick="openTab('tab-4days')">4天3夜 精華版</button>
+                        <button class="tab-btn" onclick="openTab('tab-4days')">4天3夜 精華版</button>
+            <button class="tab-btn" onclick="openTab('tab-budget')">💰 預算估算</button>
         </div>
 
         <!-- 5天4夜 行程 -->
@@ -389,8 +390,9 @@
                     欣賞震撼的虎鯨與海豚表演，參觀南極觀測船，療癒且放鬆的一天。</p>
                 </div>
                 <div class="time-block">
-                    <h4>晚上</h4>
-                    <p>前往大須商店街（營業至約晚上 7-8 點）或名古屋車站周邊進行最後的伴手禮與藥妝大採買。</p>
+                    <h4>下午/晚上 (動漫與購物)</h4>
+                    <p>前往榮區松坂屋百貨本館5樓朝聖<strong>「寶可夢中心 Nagoya (Pokémon Center Nagoya)」</strong>，購買當地限定周邊（如：穿著中日龍球衣的皮卡丘）。<br>
+                    隨後在榮商圈（唐吉訶德、大丸百貨）或大須商店街（營業至晚上 8 點）進行最後的伴手禮與藥妝大採買。</p>
                 </div>
             </div>
 
@@ -444,7 +446,8 @@
                 </div>
                 <div class="time-block">
                     <p>上午前往<strong>犬山城</strong>與<strong>城下町</strong>半日遊。<br>
-                    下午返回市區，前往<strong>大須商店街</strong>或名古屋車站周邊採買藥妝與伴手禮。<br>
+                    下午返回市區，前往榮區的松坂屋朝聖<strong>「寶可夢中心 Nagoya」</strong>。<br>
+                    傍晚在榮商圈或<strong>大須商店街</strong>採買藥妝與伴手禮。<br>
                     晚餐享用味噌鍋燒烏龍麵或台灣拉麵。</p>
                 </div>
             </div>
@@ -458,6 +461,53 @@
                 <div class="time-block">
                     <p>同 5 天 4 夜行程。<br>體驗點咖啡送吐司的早餐文化，提早前往中部國際機場採買並搭乘虎航返台。</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- 預算估算 -->
+        <div id="tab-budget" class="tab-content">
+            <div class="info-card">
+                <h2>💰 名古屋 5天4夜 預算估算 (單人)</h2>
+                <p>此為以「高質感、舒適」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                    <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                        <th style="padding: 10px;">項目</th>
+                        <th style="padding: 10px;">預估金額 (TWD)</th>
+                        <th style="padding: 10px;">說明</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 10px;"><strong>✈️ 虎航來回機票</strong></td>
+                        <td style="padding: 10px;">$8,000 - $11,000</td>
+                        <td style="padding: 10px;">含 20kg 託運行李 (建議回程買託運，去程可只帶 10kg 登機箱)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 10px;"><strong>🏨 住宿 (4晚)</strong></td>
+                        <td style="padding: 10px;">$6,000 - $8,000</td>
+                        <td style="padding: 10px;">以雙人房每晚 $3,000-$4,000 計算，單人分攤約 $1,500-$2,000/晚</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 10px;"><strong>🚆 交通費</strong></td>
+                        <td style="padding: 10px;">$2,000 - $2,500</td>
+                        <td style="padding: 10px;">機場巴士來回、市區地鐵、犬山城來回車資</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 10px;"><strong>🍣 飲食費 (5天)</strong></td>
+                        <td style="padding: 10px;">$6,000 - $8,000</td>
+                        <td style="padding: 10px;">含一餐高級鰻魚飯(約$1,000)、飛驒牛小吃、手羽先與日常拉麵</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 10px;"><strong>🎫 門票與娛樂</strong></td>
+                        <td style="padding: 10px;">$1,000 - $2,000</td>
+                        <td style="padding: 10px;">名古屋城、水族館/吉卜力公園、豐田紀念館等</td>
+                    </tr>
+                    <tr style="border-top: 2px solid var(--primary-color); background-color: rgba(224, 108, 117, 0.1);">
+                        <td style="padding: 10px;"><strong>🌟 總計 (不含購物)</strong></td>
+                        <td style="padding: 10px;"><strong>約 $23,000 - $31,500</strong></td>
+                        <td style="padding: 10px;">準備 $30,000 左右即可享受非常有質感的旅行！</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 1rem;"><small>💡 購物/藥妝/寶可夢中心消費因人而異，建議另外抓 $5,000 - $10,000 以上的購物金。</small></p>
             </div>
         </div>
     </div>
