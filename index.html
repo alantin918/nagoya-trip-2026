@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 名古屋自由行行程計畫</title>
+    <style>
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --primary-color: #e06c75;
+            --secondary-color: #d19a66;
+            --border-color: #dddddd;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1e1e2e;
+            --text-color: #abb2bf;
+            --card-bg: #282c34;
+            --primary-color: #e06c75;
+            --secondary-color: #d19a66;
+            --border-color: #444b59;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .theme-switch-wrapper {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-card li strong {
+            min-width: 100px;
+            color: var(--secondary-color);
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text-color);
+            cursor: pointer;
+            outline: none;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            opacity: 1;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .day-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .day-title span {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-right: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .time-block {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 2px dashed var(--border-color);
+        }
+
+        .time-block h4 {
+            margin: 0 0 0.3rem 0;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .time-block p {
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #eee;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        [data-theme="dark"] .badge {
+            background-color: #3e4451;
+            color: #abb2bf;
+        }
+
+        @media (max-width: 600px) {
+            .theme-switch-wrapper {
+                top: 1rem;
+                right: 1rem;
+            }
+            .tab-btn {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
+            .info-card li {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>2026 名古屋自由行</h1>
+        <div class="subtitle">虎航直飛 ‧ 質感住宿 ‧ 深度慢遊</div>
+        <div class="theme-switch-wrapper">
+            <span style="margin-right: 10px; font-size: 0.9rem;">🌓 切換主題</span>
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 基本資訊 -->
+        <div class="info-card">
+            <h2>✈️ 行程基本資訊</h2>
+            <ul>
+                <li><strong>旅行日期：</strong> 2026年6月17日 (三) ~ 6月21日 (日)</li>
+                <li><strong>航空公司：</strong> 台灣虎航 (Tigerair Taiwan) <br><small>💡 去程早去，回程午/晚回為佳。隨身行李享 10 公斤兩件優勢，適合購物！</small></li>
+                <li><strong>住宿方案：</strong><br>
+                    選項 1：名古屋京阪飯店 (Hotel Keihan Nagoya) - 榮區<br>
+                    選項 2：名古屋伏見安住睦世酒店 (hotel androoms Nagoya Fushimi) - 伏見區<br>
+                    <small>💡 兩者皆為高質感、交通便利的飯店，從中部機場搭乘名鐵巴士或地鐵皆可輕鬆抵達。</small>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 頁籤切換 -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('tab-5days')">5天4夜 悠閒版</button>
+            <button class="tab-btn" onclick="openTab('tab-4days')">4天3夜 精華版</button>
+        </div>
+
+        <!-- 5天4夜 行程 -->
+        <div id="tab-5days" class="tab-content active">
+            <div class="day-card">
+                <div class="day-title"><span>Day 1</span> 抵達名古屋 ‧ 榮商圈初探</div>
+                <div class="time-block">
+                    <h4>抵達與交通</h4>
+                    <p>搭乘虎航抵達中部國際機場 (NGO)。<br>
+                    搭乘「名鐵機場巴士」至榮/伏見區域下車，前往飯店 Check-in（或搭乘名鐵電車轉乘地鐵）。</p>
+                </div>
+                <div class="time-block">
+                    <h4>下午</h4>
+                    <p>前往飯店周邊商圈熟悉環境，若住榮區可逛久屋大通公園；若住伏見區可找間特色咖啡廳休息。</p>
+                </div>
+                <div class="time-block">
+                    <h4>晚上</h4>
+                    <p>晚餐享用名古屋必吃美食<strong>「手羽先 (炸雞翅)」</strong>（推薦：世界的山將 或 風來坊）。<br>
+                    飯後散步至綠洲 21 (Oasis 21) 欣賞宇宙船夜景與中部電力 MIRAI TOWER。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 2</span> 歷史與現代工業的碰撞</div>
+                <div class="time-block">
+                    <h4>上午</h4>
+                    <p>參觀<strong>名古屋城</strong>與本丸御殿，欣賞壯觀的金鯱與華麗建築。<br>
+                    午餐可至一旁的「金鯱橫丁」品嚐名古屋特色小吃。</p>
+                </div>
+                <div class="time-block">
+                    <h4>下午</h4>
+                    <p>前往<strong>豐田產業技術紀念館</strong>。這裡展示從紡織機到現代汽車的演進，動態展示豐富，極具質感且不無聊！</p>
+                </div>
+                <div class="time-block">
+                    <h4>晚上</h4>
+                    <p>晚餐享用極致美味的<strong>「鰻魚飯三吃」</strong>（推薦：熱田蓬萊軒 或 まるや本店）。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 3</span> 國寶古城與江戶風情 (近郊半日遊)</div>
+                <div class="time-block">
+                    <h4>上午</h4>
+                    <p>搭乘名鐵前往犬山（車程約30分鐘）。參觀日本國寶<strong>犬山城</strong>，登上天守閣俯瞰木曾川美景。</p>
+                </div>
+                <div class="time-block">
+                    <h4>下午</h4>
+                    <p>漫步於<strong>犬山城下町</strong>。品嚐三色丸子、飛驒牛握壽司，並前往超靈驗的「三光稻荷神社」洗錢求財、求姻緣（粉紅愛心繪馬）。</p>
+                </div>
+                <div class="time-block">
+                    <h4>晚上</h4>
+                    <p>返回名古屋市區。晚餐可品嚐<strong>「味噌鍋燒烏龍麵」</strong>（推薦：山本屋總本家）或特有的<strong>「台灣拉麵」</strong>（推薦：味仙）。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 4</span> 主題樂園或水族館放鬆日</div>
+                <div class="time-block">
+                    <h4>全天</h4>
+                    <p><strong>路線 A：吉卜力公園 (Ghibli Park)</strong><br>
+                    前往愛・地球博紀念公園，沉浸在宮崎駿的動畫世界。（⚠️ 需提前兩個月於官網搶票）<br>
+                    <strong>路線 B：名古屋港水族館</strong><br>
+                    欣賞震撼的虎鯨與海豚表演，參觀南極觀測船，療癒且放鬆的一天。</p>
+                </div>
+                <div class="time-block">
+                    <h4>晚上</h4>
+                    <p>前往大須商店街（營業至約晚上 7-8 點）或名古屋車站周邊進行最後的伴手禮與藥妝大採買。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 5</span> 體驗名古屋早餐文化 ‧ 滿載歸國</div>
+                <div class="time-block">
+                    <h4>上午</h4>
+                    <p>體驗名古屋特有的<strong>「Morning Service (點飲料送早餐)」</strong>文化（推薦：客美多咖啡 Komeda's 或 BUCYO Coffee）。</p>
+                </div>
+                <div class="time-block">
+                    <h4>中午至下午</h4>
+                    <p>退房後前往中部國際機場。機場的「提燈橫丁」和「煉瓦通」商店街非常好逛，甚至可至「風之浴」泡溫泉看飛機起降。<br>
+                    搭乘虎航平安返家。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4天3夜 行程 -->
+        <div id="tab-4days" class="tab-content">
+            <div class="day-card">
+                <div class="day-title"><span>Day 1</span> 抵達名古屋 ‧ 榮商圈初探</div>
+                <div class="time-block">
+                    <p>同 5 天 4 夜行程。<br>搭乘虎航抵達、飯店 Check-in，晚上品嚐手羽先、逛綠洲 21。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 2</span> 經典必遊：名古屋城與豐田紀念館</div>
+                <div class="time-block">
+                    <p>同 5 天 4 夜行程。<br>上午名古屋城，下午豐田產業技術紀念館，晚餐品嚐鰻魚飯三吃。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 3</span> 國寶古城與江戶風情 (近郊半日遊)</div>
+                <div class="time-block">
+                    <p>上午前往<strong>犬山城</strong>與<strong>城下町</strong>半日遊。<br>
+                    下午返回市區，前往<strong>大須商店街</strong>或名古屋車站周邊採買藥妝與伴手禮。<br>
+                    晚餐享用味噌鍋燒烏龍麵或台灣拉麵。</p>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-title"><span>Day 4</span> 名古屋早餐文化 ‧ 準備賦歸</div>
+                <div class="time-block">
+                    <p>同 5 天 4 夜行程。<br>體驗點咖啡送吐司的早餐文化，提早前往中部國際機場採買並搭乘虎航返台。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 切換頁籤
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 深色模式切換
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>
