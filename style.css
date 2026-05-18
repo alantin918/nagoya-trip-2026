@@ -206,6 +206,24 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .tip-card p { font-size:0.88rem; color:var(--text2); }
 .tip-card strong { color:var(--text); }
 
+/* Recommendation cards (food, spots, gifts) */
+.reco-chapter { padding-bottom:2rem; }
+.reco-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; }
+.reco-card {
+  background:var(--card); border-radius:12px; overflow:hidden;
+  box-shadow:var(--shadow2); border:1px solid var(--border);
+  opacity:0; transform:translateY(20px); transition: opacity .5s, transform .5s, box-shadow .3s;
+}
+.reco-card.visible { opacity:1; transform:translateY(0); }
+.reco-card:hover { box-shadow:var(--shadow); transform:translateY(-4px); }
+.reco-card.visible:hover { transform:translateY(-4px); }
+.reco-card img { width:100%; height:200px; object-fit:cover; display:block; }
+.reco-body { padding:1.2rem; }
+.reco-body h4 { font-family:var(--serif); font-size:1.05rem; color:var(--text); margin-bottom:0.3rem; }
+.reco-where { font-size:0.8rem; color:var(--gold); margin-bottom:0.5rem; }
+.reco-body p { font-size:0.88rem; color:var(--text2); }
+.reco-body p strong { color:var(--text); }
+
 /* Footer */
 .book-footer {
   text-align:center; padding:2rem; font-size:0.8rem; color:var(--text2);

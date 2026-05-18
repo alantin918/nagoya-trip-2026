@@ -13,7 +13,7 @@
   <div class="cover-content">
     <p class="cover-label">TRAVEL GUIDE <span data-bind="year"></span></p>
     <h1>名古屋自由行</h1>
-    <p class="cover-sub">虎航直飛 ‧ 質感住宿 ‧ 深度慢遊</p>
+    <p class="cover-sub" data-bind="slogan"></p>
     <div class="cover-date" data-bind="coverDate"></div>
   </div>
   <a href="#main-content" class="scroll-hint">↓ 開始閱讀</a>
@@ -21,10 +21,13 @@
 
 <nav class="toc" id="main-content">
   <div class="toc-inner">
-    <button class="toc-btn active" onclick="openTab(this,&apos;tab-5days&apos;)">5天4夜 悠閒版</button>
-    <button class="toc-btn" onclick="openTab(this,&apos;tab-4days&apos;)">4天3夜 精華版</button>
-    <button class="toc-btn" onclick="openTab(this,&apos;tab-budget&apos;)">💰 預算估算</button>
-    <button class="toc-btn" onclick="openTab(this,&apos;tab-tips&apos;)">💡 實用提示</button>
+    <button class="toc-btn active" onclick="openTab(this,&apos;tab-5days&apos;)">5天4夜</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-4days&apos;)">4天3夜</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-food&apos;)">🍜 美食</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-spots&apos;)">📍 景點</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-gifts&apos;)">🎁 伴手禮</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-budget&apos;)">💰 預算</button>
+    <button class="toc-btn" onclick="openTab(this,&apos;tab-tips&apos;)">💡 提示</button>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="切換主題">🌓</button>
   </div>
 </nav>
@@ -35,7 +38,7 @@
   <div class="chapter-header"><span class="ch-label">OVERVIEW</span><h2>行程基本資訊</h2></div>
   <div class="info-grid">
     <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p data-bind="dateRange"></p></div></div>
-    <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p>台灣虎航 (Tigerair Taiwan)<br><small>💡 去程早去，回程午/晚回為佳。隨身行李享 10 公斤兩件優勢，適合購物！</small></p></div></div>
+    <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p data-bind="airlineInfo"></p></div></div>
     <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>選項 1：名古屋京阪飯店 - 榮區<br>選項 2：名古屋伏見安住睦世酒店 - 伏見區<br><small>💡 兩者皆為高質感、交通便利的飯店。</small></p></div></div>
   </div>
 </section>
@@ -147,14 +150,57 @@
   <div class="chapter-header"><span class="ch-label">BUDGET</span><h2>名古屋 <span data-bind="totalDays"></span>天<span data-bind="totalNights"></span>夜 預算估算 (單人)</h2></div>
   <p class="budget-intro">此為以「高質感、舒適」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
   <div class="budget-grid">
-    <div class="budget-card"><div class="budget-icon">✈️</div><h4>虎航來回機票</h4><div class="budget-amount">$8,000 - $11,000</div><p>含 20kg 託運行李</p></div>
-    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (<span data-bind="totalNights"></span>晚)</h4><div class="budget-amount">$6,000 - $8,000</div><p>雙人房分攤約 $1,500-$2,000/晚</p></div>
+    <div class="budget-card"><div class="budget-icon">✈️</div><h4>來回機票</h4><div class="budget-amount">$11,000 - $16,000</div><p>虎航/樂桃/星宇等，含託運行李</p></div>
+    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (<span data-bind="totalNights"></span>晚)</h4><div class="budget-amount">$10,000 - $12,000</div><p>單人約 $2,500-$3,000/晚</p></div>
     <div class="budget-card"><div class="budget-icon">🚆</div><h4>交通費</h4><div class="budget-amount">$2,000 - $2,500</div><p>機場巴士、市區地鐵、犬山來回</p></div>
     <div class="budget-card"><div class="budget-icon">🍣</div><h4>飲食費 (<span data-bind="totalDays"></span>天)</h4><div class="budget-amount">$6,000 - $8,000</div><p>含鰻魚飯、飛驒牛、手羽先等</p></div>
     <div class="budget-card"><div class="budget-icon">🎫</div><h4>門票與娛樂</h4><div class="budget-amount">$1,000 - $2,000</div><p>名古屋城、水族館、豐田紀念館等</p></div>
-    <div class="budget-card total"><div class="budget-icon">🌟</div><h4>總計 (不含購物)</h4><div class="budget-amount">約 $23,000 - $31,500</div><p>準備 $30,000 左右即可享受非常有質感的旅行！</p></div>
+    <div class="budget-card total"><div class="budget-icon">🌟</div><h4>總計 (不含購物)</h4><div class="budget-amount">約 $30,000 - $40,500</div><p>準備 $35,000 左右即可享受非常有質感的旅行！</p></div>
   </div>
   <p class="budget-note">💡 購物/藥妝/寶可夢中心消費因人而異，建議另外抓 $5,000 - $10,000 以上的購物金。</p>
+</section>
+</div>
+
+
+<div id="tab-food" class="tab-content">
+<section class="reco-chapter">
+  <div class="chapter-header"><span class="ch-label">GOURMET</span><h2>名古屋必吃美食推薦</h2></div>
+  <div class="reco-grid">
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=600&q=80" alt="鰻魚飯三吃"><div class="reco-body"><h4>鰻魚飯三吃 (ひつまぶし)</h4><p class="reco-where">📍 熱田蓬萊軒 / まるや本店</p><p>名古屋第一名物！先吃原味、再加蔥花山葵、最後用高湯泡成茶泡飯，三種吃法一次滿足。預算約 ¥3,500-4,500。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" alt="味噌豬排"><div class="reco-body"><h4>味噌炸豬排 (味噌カツ)</h4><p class="reco-where">📍 矢場とん (矢場町本店)</p><p>濃郁八丁味噌醬汁淋在酥脆炸豬排上，鹹甜入味超下飯。名古屋車站也有分店，排隊名店！預算約 ¥1,500-2,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=600&q=80" alt="手羽先"><div class="reco-body"><h4>手羽先 (炸雞翅)</h4><p class="reco-where">📍 世界の山ちゃん / 風來坊</p><p>外酥內嫩、胡椒香氣十足的名古屋式炸雞翅，配啤酒絕配！居酒屋必點。預算約 ¥500-800/份。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="台灣拉麵"><div class="reco-body"><h4>台灣拉麵</h4><p class="reco-where">📍 味仙 (今池本店 / 矢場町店)</p><p>其實是名古屋原創！辣肉燥搭配韭菜，重口味超過癮。可選「美國人口味 (加辣)」或「義大利人口味 (減辣)」。預算約 ¥850。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?auto=format&fit=crop&w=600&q=80" alt="味噌煮込みうどん"><div class="reco-body"><h4>味噌鍋燒烏龍麵</h4><p class="reco-where">📍 山本屋總本家 / 山本屋本店</p><p>用八丁味噌熬煮的濃厚湯底，搭配彈牙到近乎硬的手打烏龍麵。冬天必吃暖胃料理！預算約 ¥1,200-1,800。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Morning Service"><div class="reco-body"><h4>Morning Service 早餐</h4><p class="reco-where">📍 客美多咖啡 (コメダ) / BUCYO Coffee</p><p>名古屋獨有文化：點一杯飲料就送厚片吐司和水煮蛋！客美多的招牌「シロノワール」丹麥鬆餅也必嚐。預算約 ¥500-800。</p></div></div>
+  </div>
+</section>
+</div>
+
+<div id="tab-spots" class="tab-content">
+<section class="reco-chapter">
+  <div class="chapter-header"><span class="ch-label">SPOTS</span><h2>推薦景點精選</h2></div>
+  <div class="reco-grid">
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=600&q=80" alt="名古屋城"><div class="reco-body"><h4>名古屋城</h4><p class="reco-where">📍 地鐵名城線 市役所站</p><p>金鯱閃耀的百大名城，本丸御殿的障壁畫豪華絕倫。旁邊「金鯱橫丁」可以一次吃遍名古屋美食。門票 ¥500。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="犬山城"><div class="reco-body"><h4>犬山城 &amp; 城下町</h4><p class="reco-where">📍 名鐵犬山線 犬山遊園站</p><p>日本國寶四城之一，天守閣可俯瞰木曾川。城下町的三色丸子、飛驒牛壽司和三光稻荷神社粉紅繪馬超好拍！</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=600&q=80" alt="名古屋港水族館"><div class="reco-body"><h4>名古屋港水族館</h4><p class="reco-where">📍 地鐵名港線 名古屋港站</p><p>日本最大級水族館！虎鯨和海豚表演超震撼，還有南極觀測船「富士號」可參觀。適合雨天備案。門票 ¥2,030。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="豐田產業技術紀念館"><div class="reco-body"><h4>豐田產業技術紀念館</h4><p class="reco-where">📍 地鐵東山線 龜島站</p><p>從紡織機到最新汽車科技的演進，有大量互動展示。就算不是車迷也會覺得很有趣！門票 ¥500，CP值超高。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1618164435735-413d3b066c9a?auto=format&fit=crop&w=600&q=80" alt="吉卜力公園"><div class="reco-body"><h4>吉卜力公園</h4><p class="reco-where">📍 愛・地球博紀念公園 (リニモ)</p><p>宮崎駿迷必訪聖地！霍爾的移動城堡、龍貓森林等場景還原。⚠️ 需提前兩個月在官網搶票。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=600&q=80" alt="熱田神宮"><div class="reco-body"><h4>熱田神宮</h4><p class="reco-where">📍 名鐵神宮前站</p><p>供奉三神器之一「草薙劍」的千年古社，森林參道靜謐莊嚴。參拜後可在門前町吃蓬萊軒鰻魚飯。免費參拜。</p></div></div>
+  </div>
+</section>
+</div>
+
+<div id="tab-gifts" class="tab-content">
+<section class="reco-chapter">
+  <div class="chapter-header"><span class="ch-label">SOUVENIRS</span><h2>推薦伴手禮必買</h2></div>
+  <div class="reco-grid">
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="蝦餅"><div class="reco-body"><h4>坂角總本舖「ゆかり」蝦餅</h4><p class="reco-where">📍 名古屋車站 / 中部機場</p><p>名古屋No.1伴手禮！整隻蝦壓製的薄脆蝦餅，鮮味濃郁。送禮自用兩相宜，包裝也很精美。約 ¥1,000-2,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1631206753348-db44968fd440?auto=format&fit=crop&w=600&q=80" alt="外郎"><div class="reco-body"><h4>青柳總本家「ういろう」外郎</h4><p class="reco-where">📍 名古屋車站 / 大須</p><p>名古屋傳統和菓子，口感類似年糕但更細緻，有抹茶、小豆、櫻花等多種口味。一口大小超方便。約 ¥600-1,200。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80" alt="小倉吐司脆餅"><div class="reco-body"><h4>小倉吐司脆餅 (ラスク)</h4><p class="reco-where">📍 名古屋車站地下街</p><p>把名古屋名物小倉紅豆吐司做成酥脆餅乾！奶油和紅豆的絕妙組合，輕巧好攜帶，送同事最推薦。約 ¥800-1,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80" alt="限定零食"><div class="reco-body"><h4>名古屋限定零食</h4><p class="reco-where">📍 車站 / 便利商店 / 機場</p><p>味噌口味 KitKat、蝦餅口味 Pocky、手羽先口味 Pretz 等名古屋限定版。超市和便利商店就買得到！約 ¥300-600。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=600&q=80" alt="寶可夢中心"><div class="reco-body"><h4>寶可夢中心限定商品</h4><p class="reco-where">📍 松坂屋百貨本館 5F (榮)</p><p>名古屋限定的穿金鯱裝皮卡丘、中日龍球衣皮卡丘等，外地買不到！還有各種文具、零食和玩偶。價格不等。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=600&q=80" alt="藥妝"><div class="reco-body"><h4>藥妝 &amp; 美妝</h4><p class="reco-where">📍 大須商店街 / 榮唐吉訶德</p><p>日本藥妝永遠是必買清單！推薦在大須商店街的藥妝店比價，價格通常比榮區更便宜。滿 ¥5,000 可免稅。</p></div></div>
+  </div>
 </section>
 </div>
 
@@ -190,11 +236,13 @@ const TRIP_CONFIG = {
   endWeekday: '一',
   totalDays: 5,
   totalNights: 4,
-  lastUpdated: '2026年05月18日 08時54分',
+  slogan: '質感住宿 ‧ 深度慢遊 ‧ 美食巡禮',
+  airline: '虎航 / 樂桃 / 星宇等廉航或傳航直飛',
+  airlineTip: '💡 去程早去，回程午/晚回為佳。建議加購託運行李！',
+  lastUpdated: '2026年05月18日 09時02分',
 };
 // ===== 以上為設定區 =====
 
-// 自動填入所有 data-bind 欄位
 function applyConfig() {
   const C = TRIP_CONFIG;
   const bindings = {
@@ -203,6 +251,8 @@ function applyConfig() {
     dateRange: `${C.year}年${C.startMonth}月${C.startDay}日 (${C.startWeekday}) ~ ${C.endMonth}月${C.endDay}日 (${C.endWeekday})`,
     totalDays: C.totalDays,
     totalNights: C.totalNights,
+    slogan: C.slogan,
+    airlineInfo: `${C.airline}\n${C.airlineTip}`,
     lastUpdated: `最後更新：${C.lastUpdated}`,
   };
   document.querySelectorAll('[data-bind]').forEach(el => {
@@ -231,7 +281,7 @@ function toggleTheme() {
   }, {threshold: 0.1});
   document.addEventListener("DOMContentLoaded", () => {
     applyConfig();
-    document.querySelectorAll(".day-chapter, .info-item, .budget-card, .tip-card").forEach(el => observer.observe(el));
+    document.querySelectorAll(".day-chapter, .info-item, .budget-card, .tip-card, .reco-card").forEach(el => observer.observe(el));
   });
 })();
 </script>
