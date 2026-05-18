@@ -11,10 +11,10 @@
 <div class="book-cover">
   <div class="cover-overlay"></div>
   <div class="cover-content">
-    <p class="cover-label">TRAVEL GUIDE 2026</p>
+    <p class="cover-label">TRAVEL GUIDE <span data-bind="year"></span></p>
     <h1>名古屋自由行</h1>
     <p class="cover-sub">虎航直飛 ‧ 質感住宿 ‧ 深度慢遊</p>
-    <div class="cover-date">6.17 — 6.21</div>
+    <div class="cover-date" data-bind="coverDate"></div>
   </div>
   <a href="#main-content" class="scroll-hint">↓ 開始閱讀</a>
 </div>
@@ -34,7 +34,7 @@
 <section class="info-chapter">
   <div class="chapter-header"><span class="ch-label">OVERVIEW</span><h2>行程基本資訊</h2></div>
   <div class="info-grid">
-    <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p>2026年6月17日 (三) ~ 6月21日 (日)</p></div></div>
+    <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p data-bind="dateRange"></p></div></div>
     <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p>台灣虎航 (Tigerair Taiwan)<br><small>💡 去程早去，回程午/晚回為佳。隨身行李享 10 公斤兩件優勢，適合購物！</small></p></div></div>
     <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>選項 1：名古屋京阪飯店 - 榮區<br>選項 2：名古屋伏見安住睦世酒店 - 伏見區<br><small>💡 兩者皆為高質感、交通便利的飯店。</small></p></div></div>
   </div>
@@ -144,13 +144,13 @@
 
 <div id="tab-budget" class="tab-content">
 <section class="budget-chapter">
-  <div class="chapter-header"><span class="ch-label">BUDGET</span><h2>名古屋 5天4夜 預算估算 (單人)</h2></div>
+  <div class="chapter-header"><span class="ch-label">BUDGET</span><h2>名古屋 <span data-bind="totalDays"></span>天<span data-bind="totalNights"></span>夜 預算估算 (單人)</h2></div>
   <p class="budget-intro">此為以「高質感、舒適」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
   <div class="budget-grid">
     <div class="budget-card"><div class="budget-icon">✈️</div><h4>虎航來回機票</h4><div class="budget-amount">$8,000 - $11,000</div><p>含 20kg 託運行李</p></div>
-    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (4晚)</h4><div class="budget-amount">$6,000 - $8,000</div><p>雙人房分攤約 $1,500-$2,000/晚</p></div>
+    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (<span data-bind="totalNights"></span>晚)</h4><div class="budget-amount">$6,000 - $8,000</div><p>雙人房分攤約 $1,500-$2,000/晚</p></div>
     <div class="budget-card"><div class="budget-icon">🚆</div><h4>交通費</h4><div class="budget-amount">$2,000 - $2,500</div><p>機場巴士、市區地鐵、犬山來回</p></div>
-    <div class="budget-card"><div class="budget-icon">🍣</div><h4>飲食費 (5天)</h4><div class="budget-amount">$6,000 - $8,000</div><p>含鰻魚飯、飛驒牛、手羽先等</p></div>
+    <div class="budget-card"><div class="budget-icon">🍣</div><h4>飲食費 (<span data-bind="totalDays"></span>天)</h4><div class="budget-amount">$6,000 - $8,000</div><p>含鰻魚飯、飛驒牛、手羽先等</p></div>
     <div class="budget-card"><div class="budget-icon">🎫</div><h4>門票與娛樂</h4><div class="budget-amount">$1,000 - $2,000</div><p>名古屋城、水族館、豐田紀念館等</p></div>
     <div class="budget-card total"><div class="budget-icon">🌟</div><h4>總計 (不含購物)</h4><div class="budget-amount">約 $23,000 - $31,500</div><p>準備 $30,000 左右即可享受非常有質感的旅行！</p></div>
   </div>
@@ -174,11 +174,43 @@
 </main>
 
 <footer class="book-footer">
-  <p>2026 名古屋自由行 — Made with ❤️</p>
-  <p class="footer-updated">最後更新：2026年05月18日 02時10分</p>
+  <p><span data-bind="year"></span> 名古屋自由行 — Made with ❤️</p>
+  <p class="footer-updated" data-bind="lastUpdated"></p>
 </footer>
 
 <script>
+// ===== ✏️ 行程設定：改這裡就好，全頁面自動更新 =====
+const TRIP_CONFIG = {
+  year: 2026,
+  startMonth: 6,
+  startDay: 18,
+  startWeekday: '四',
+  endMonth: 6,
+  endDay: 22,
+  endWeekday: '一',
+  totalDays: 5,
+  totalNights: 4,
+  lastUpdated: '2026年05月18日 08時54分',
+};
+// ===== 以上為設定區 =====
+
+// 自動填入所有 data-bind 欄位
+function applyConfig() {
+  const C = TRIP_CONFIG;
+  const bindings = {
+    year: C.year,
+    coverDate: `${C.startMonth}.${C.startDay} — ${C.endMonth}.${C.endDay}`,
+    dateRange: `${C.year}年${C.startMonth}月${C.startDay}日 (${C.startWeekday}) ~ ${C.endMonth}月${C.endDay}日 (${C.endWeekday})`,
+    totalDays: C.totalDays,
+    totalNights: C.totalNights,
+    lastUpdated: `最後更新：${C.lastUpdated}`,
+  };
+  document.querySelectorAll('[data-bind]').forEach(el => {
+    const key = el.getAttribute('data-bind');
+    if (bindings[key] !== undefined) el.textContent = bindings[key];
+  });
+}
+
 function openTab(btn, tabId) {
   document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
   document.querySelectorAll(".toc-btn").forEach(b => b.classList.remove("active"));
@@ -198,6 +230,7 @@ function toggleTheme() {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); });
   }, {threshold: 0.1});
   document.addEventListener("DOMContentLoaded", () => {
+    applyConfig();
     document.querySelectorAll(".day-chapter, .info-item, .budget-card, .tip-card").forEach(el => observer.observe(el));
   });
 })();
