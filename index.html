@@ -320,7 +320,19 @@ function applyConfig() {
   });
 }
 
-function openTab(btn, tabId) {
+
+        function openMiniTab(btn, tabId, groupName) {
+            // Find all content in this group and hide them
+            document.querySelectorAll('.' + groupName + '-content').forEach(t => t.classList.remove('active'));
+            // Find all buttons in this group and remove active class
+            btn.closest('.mini-tabs').querySelectorAll('.mini-tab-btn').forEach(b => b.classList.remove('active'));
+            
+            // Show the selected content and activate button
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function openTab(btn, tabId) {
   document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
   document.querySelectorAll(".toc-btn").forEach(b => b.classList.remove("active"));
   document.getElementById(tabId).classList.add("active");
