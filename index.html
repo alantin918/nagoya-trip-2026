@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 名古屋自由行行程計畫</title>
+<title>2026 沖繩自由行行程計畫</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,13 +12,12 @@
   <div class="cover-overlay"></div>
   <div class="cover-content">
     <p class="cover-label">TRAVEL GUIDE <span data-bind="year"></span></p>
-    <h1>名古屋自由行</h1>
+    <h1>沖繩自由行</h1>
     <p class="cover-sub" data-bind="slogan"></p>
     <div class="cover-date" data-bind="coverDate"></div>
   </div>
   <a href="#main-content" class="scroll-hint">↓ 開始閱讀</a>
 </div>
-
 <nav class="toc" id="main-content">
   <div class="toc-inner">
     <button class="toc-btn active" onclick="openTab(this,'tab-4days')">📅 行程</button>
@@ -27,301 +26,224 @@
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="切換主題">🌓</button>
   </div>
 </nav>
-
 <main class="book-body">
-
 <div id="tab-4days" class="tab-content active">
-
 <section class="info-chapter">
   <div class="chapter-header"><span class="ch-label">OVERVIEW</span><h2>行程基本資訊</h2></div>
   <div class="info-grid">
     <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p data-bind="dateRange"></p></div></div>
     <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p data-bind="airlineInfo"></p></div></div>
-    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>名古屋伏見安住睦世酒店 (hotel androoms)<br>3晚 (機加酒總價 台幣 24,402)<br><small>💡 質感工業風，交通便利。</small></p></div></div>
+    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>那霸國際通附近飯店<br>3晚<br><small>💡 步行即達國際通，購物方便。</small></p></div></div>
   </div>
 </section>
-
 <article class="day-chapter">
-  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1674923207459-98ed5a4dcd06?auto=format&fit=crop&w=1200&q=80)">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=1200&q=80)">
     <div class="day-hero-overlay"></div>
-    <div class="day-hero-text"><span class="day-num">01</span><h3>6/18 (四) 紅眼抵達 ‧ 市區初探索</h3><span class="day-weather">☁️ 多雲 24°C</span></div>
+    <div class="day-hero-text"><span class="day-num">01</span><h3>6/18 (四) 抵達那霸 ‧ 國際通漫步</h3><span class="day-weather">🌤️ 晴時多雲 29°C</span></div>
   </div>
-  <div class="day-body">
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>✈️ 02:10 桃園出發</h4><p>搭乘<strong>樂桃航空 MM28</strong>紅眼班機，建議在機上補眠。約 06:05 抵達中部國際機場 (NGO)。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content">
-        <h4>07:00 紅眼班機回血作戰 (三選一)</h4>
-        <p>抵達後強烈建議先進行 3 小時的「休息回血」，以免下午體力透支：</p>
-        
-        <div class="mini-tabs">
-            <button class="mini-tab-btn active" onclick="openMiniTab(this, 'opt-netcafe', 'day1-opt')">🛏️ 網咖平躺 (推薦)</button>
-            <button class="mini-tab-btn" onclick="openMiniTab(this, 'opt-airport', 'day1-opt')">✈️ 機場溫泉</button>
-            <button class="mini-tab-btn" onclick="openMiniTab(this, 'opt-city', 'day1-opt')">♨️ 市區溫泉</button>
-        </div>
-        
-        <div id="opt-netcafe" class="mini-tab-content day1-opt-content active">
-            <strong>【快活CLUB】可上鎖平躺包廂</strong><br>
-            <p style="margin-top:5px; margin-bottom:0;">搭名鐵進市區，到伏見的飯店寄放行李後，步行至榮區的快活CLUB。開一個「鍵付完全個室(全平面墊)」，免費洗熱水澡後，戴眼罩平躺爆睡 3 小時。醒來喝杯免費咖啡，滿血開始旅程。</p>
-        </div>
-        <div id="opt-airport" class="mini-tab-content day1-opt-content">
-            <strong>【SOLA SPA 風の湯】機場內泡湯</strong><br>
-            <p style="margin-top:5px; margin-bottom:0;">下機領完行李後不急著進市區，直接前往第一航廈 4 樓。一邊看飛機起降一邊泡湯，洗去搭機的僵硬與疲憊，整理好儀容後再搭車前往市區飯店寄放行李。</p>
-        </div>
-        <div id="opt-city" class="mini-tab-content day1-opt-content">
-            <strong>【Canal Resort】市區大型超級澡堂</strong><br>
-            <p style="margin-top:5px; margin-bottom:0;">搭車到名古屋車站或伏見站後，轉乘 Canal Resort 的「免費接駁車」。裡面規模極大，除了泡湯，重點是去「岩盤浴休息區」的懶骨頭或沙發床躺平補眠。</p>
-        </div>
-      </div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>11:00 滿血復活！早午餐</h4><p>充分休息後，就近在榮/伏見商圈找間特色咖啡廳吃個早午餐，或是吃點輕食喚醒腸胃。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>12:30 熱田神宮</h4><p>前往供奉三神器之一「草薙劍」的千年古社。森林參道靜謐莊嚴，約 1-1.5 小時可逛完。免費參拜。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:00 午餐：鰻魚飯三吃</h4><p>熱田神宮旁的<strong>蓬萊軒 (神宮店)</strong>。刻意避開 12 點人潮最尖峰時段，品嚐名古屋第一名物！</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>16:00 飯店 Check-in ＆ 休息</h4><p>回到 <strong>hotel androoms 名古屋伏見</strong> 正式辦理入住，將裝備卸下，在房間內簡單梳洗與休息。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>17:30 榮商圈 ‧ 久屋大通公園</h4><p>傍晚氣溫較舒適時，步行前往<strong>久屋大通公園</strong>與榮商圈散步，感受都會綠意與時尚氛圍。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>19:00 晚餐：手羽先</h4><p>前往<strong>世界の山ちゃん 或 風來坊</strong>，大啖外酥內嫩的名古屋式炸雞翅，配上生啤酒！</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>20:30 綠洲21 夜景 (早點回房)</h4><p>散步至<strong>綠洲21</strong>欣賞宇宙船夜景後，建議盡早回飯店休息，把紅眼班機的睡眠時數徹底補齊！</p></div></div>
-    </div>
-  </div>
+  <div class="day-body"><div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>✈️ 抵達那霸機場</h4><p>搭乘<strong>樂桃航空</strong>抵達那霸機場 (OKA)。出關後搭<strong>Yui Rail 單軌</strong>前往飯店寄放行李，車程約 15 分鐘。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>10:00 首里城公園</h4><p>前往<strong>首里城</strong>，世界遺產琉球王國的王城。城牆、城門和石疊道依然壯觀，可俯瞰那霸市景。門票 ¥400。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>12:30 午餐：沖繩蕎麥麵</h4><p>在首里附近享用<strong>沖繩蕎麥麵 (沖縄そば)</strong>，推薦「首里そば」，濃郁豬骨柴魚湯頭搭配 QQ 麵條和三層肉。約 ¥700-900。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:30 國際通散步</h4><p>搭單軌到<strong>牧志站</strong>，漫步約 1.6 公里的國際通商店街，各種伴手禮店、餐廳和特色小店應有盡有。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>16:00 牧志公設市場</h4><p>逛<strong>牧志公設市場</strong>「沖繩的廚房」。一樓買海鮮，二樓現場料理！推薦嘗試<strong>海葡萄</strong>和各種鮮豔沖繩魚。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>18:30 晚餐：居酒屋料理</h4><p>在國際通巷弄找間<strong>沖繩居酒屋</strong>，品嚐苦瓜炒蛋、島豆腐、Agu 豬料理，搭配<strong>泡盛</strong>感受島嶼夜晚。</p></div></div>
+  </div></div>
 </article>
-
 <article class="day-chapter">
-  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=1200&q=80)">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80)">
     <div class="day-hero-overlay"></div>
-    <div class="day-hero-text"><span class="day-num">02</span><h3>6/19 (五) 名古屋城 ‧ 工業遺產巡禮</h3><span class="day-weather">🌦️ 陰陣雨 25°C</span></div>
+    <div class="day-hero-text"><span class="day-num">02</span><h3>6/19 (五) 北部自駕 ‧ 海洋世界</h3><span class="day-weather">☀️ 晴朗 30°C</span></div>
   </div>
-  <div class="day-body">
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>09:30 名古屋城</h4><p>搭地鐵至市役所站，參觀<strong>名古屋城</strong>與本丸御殿，欣賞壯觀的金鯱與華麗障壁畫。門票 ¥500。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>11:30 金鯱橫丁午餐</h4><p>名古屋城旁的<strong>「金鯱橫丁」</strong>美食街，可品嚐味噌豬排、棊子麵、天むす等名古屋名物小吃。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>13:30 豐田產業技術紀念館</h4><p>搭地鐵至龜島站，參觀<strong>豐田產業技術紀念館</strong>。從紡織機到最新汽車科技的演進，互動展示豐富。門票 ¥500，約 2-3 小時。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>16:30 大須商店街</h4><p>前往名古屋的「原宿」——<strong>大須商店街</strong>。平價藥妝、二手衣物、動漫周邊、各國小吃應有盡有。可先在此購入藥妝。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>19:00 晚餐：味噌鍋燒烏龍麵</h4><p>前往<strong>山本屋總本家</strong>品嚐八丁味噌熬煮的濃厚湯底烏龍麵，冬夏皆宜的經典名古屋美食。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>20:30 榮商圈夜逛</h4><p>在榮商圈逛街消食，松坂屋、三越等百貨至 20:00 營業，唐吉訶德則營業至深夜。</p></div></div>
-    </div>
-  </div>
+  <div class="day-body"><div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>08:00 取車出發</h4><p>在那霸市區<strong>租車店取車</strong>，沿海岸線 58 號國道北上，車程約 2 小時抵達本部町。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>10:30 美麗海水族館</h4><p>沖繩必訪No.1！<strong>美麗海水族館</strong>「黑潮之海」大水槽，鯨鯊和鬼蝠魟在眼前悠游。海豚表演也不容錯過！門票 ¥2,180。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>13:00 午餐：蝦蝦餐車</h4><p>前往古宇利島途中，在名護附近的蝦餐車享用蒜蝦飯，邊看海邊吃超幸福。約 ¥1,000-1,300。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:30 古宇利島</h4><p>開過壯觀的<strong>古宇利大橋</strong>登島！橋兩側是無敵透明藍海。必訪<strong>心型岩 (Heart Rock)</strong>拍照打卡。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>16:30 萬座毛</h4><p>回程順遊<strong>萬座毛</strong>，像大象鼻子的珊瑚礁斷崖配上碧藍海水，沖繩最經典自然景觀。門票 ¥100。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>18:00 美國村夕陽晚餐</h4><p>前往<strong>北谷美國村</strong>看夕陽，推薦在海邊<strong>牛排館</strong>享用沖繩美式牛排 (¥2,000-3,500)。</p></div></div>
+  </div></div>
 </article>
-
 <article class="day-chapter">
-  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80)">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80)">
     <div class="day-hero-overlay"></div>
-    <div class="day-hero-text"><span class="day-num">03</span><h3>6/20 (六) 犬山城 ‧ 寶可夢採買日</h3><span class="day-weather">☀️ 晴天 28°C</span></div>
+    <div class="day-hero-text"><span class="day-num">03</span><h3>6/20 (六) 南部祕境 ‧ 海島度假</h3><span class="day-weather">⛅ 多雲 28°C</span></div>
   </div>
-  <div class="day-body">
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>09:30 出發前往犬山</h4><p>從名古屋搭乘<strong>名鐵犬山線</strong>前往犬山（約30分鐘）。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>10:15 犬山城</h4><p>參觀日本國寶<strong>犬山城</strong>，登上天守閣俯瞰木曾川壯麗美景。門票 ¥550。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>11:30 犬山城下町</h4><p>漫步城下町，品嚐<strong>三色丸子、飛驒牛握壽司</strong>，前往超靈驗的<strong>三光稻荷神社</strong>洗錢求財、拍粉紅繪馬。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>13:00 午餐：田樂豆腐 / 城下町小吃</h4><p>在城下町找間店坐下來品嚐犬山特色的<strong>田樂味噌豆腐</strong>，或繼續邊走邊吃。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:30 返回名古屋</h4><p>搭名鐵返回市區，前往榮區松坂屋百貨。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>15:15 寶可夢中心 Nagoya</h4><p>朝聖<strong>松坂屋百貨本館5F 寶可夢中心</strong>！入手名古屋限定的金鯱裝皮卡丘、中日龍球衣皮卡丘等獨家商品。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>17:00 伴手禮採買</h4><p>在名古屋車站的<strong>地下街</strong>採買坂角蝦餅、外郎、小倉吐司脆餅等伴手禮。地下街非常龐大，建議先鎖定目標。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>19:00 晚餐：台灣拉麵 或 味噌豬排</h4><p>前往<strong>味仙 (矢場町店)</strong>品嚐名古屋原創台灣拉麵，或至<strong>矢場とん</strong>吃味噌炸豬排。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>20:30 整理行李</h4><p>回飯店整理戰利品，確認回程行李重量。⚠️ 樂桃隨身行李嚴格限制 7kg！很容易超重，建議務必善用託運。</p></div></div>
-    </div>
-  </div>
+  <div class="day-body"><div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>09:00 波上宮</h4><p>前往<strong>波上宮</strong>，建在珊瑚礁斷崖上的沖繩最著名神社。旁邊<strong>波之上海灘</strong>是那霸唯一海灘。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>11:00 瀨長島 Umikaji Terrace</h4><p>白色地中海風格商場依山面海超好拍！邊吃<strong>幸福鬆餅</strong>邊看飛機起降。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>13:00 午餐：塔可飯</h4><p>沖繩獨創的<strong>塔可飯 (Taco Rice)</strong>！推薦「King Tacos」，辣肉醬配白飯和起司。約 ¥500-800。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:30 知念岬 / 齋場御嶽</h4><p><strong>知念岬公園</strong>眺望太平洋。<strong>齋場御嶽</strong>是琉球最神聖的世界遺產。門票 ¥300。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>17:00 國際通購物</h4><p>回那霸在<strong>國際通</strong>採買伴手禮。紅芋塔、金楚糕、泡盛、石獅子周邊一次掃完。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>19:00 晚餐：Agu 豬涮涮鍋</h4><p>最後的沖繩之夜，品嚐<strong>Agu 豬涮涮鍋</strong>。沖繩特有品種，油花細膩入口即化。約 ¥3,000-5,000。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>21:00 整理行李</h4><p>⚠️ 樂桃隨身行李限 7kg！沖繩伴手禮很重（泡盛、黑糖），務必善用託運。</p></div></div>
+  </div></div>
 </article>
-
 <article class="day-chapter">
-  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80)">
+  <div class="day-hero" style="background-image:url(https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1200&q=80)">
     <div class="day-hero-overlay"></div>
-    <div class="day-hero-text"><span class="day-num">04</span><h3>6/21 (日) 悠閒最終日 ‧ 滿載歸國</h3><span class="day-weather">🌧️ 梅雨 23°C</span></div>
+    <div class="day-hero-text"><span class="day-num">04</span><h3>6/21 (日) 悠閒最終日 ‧ 滿載歸國</h3><span class="day-weather">🌤️ 晴時多雲 29°C</span></div>
   </div>
-  <div class="day-body">
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>09:30 小倉紅豆吐司早餐</h4><p>睡飽後在飯店附近喫茶店享用<strong>小倉紅豆吐司</strong>和咖啡，悠閒享受最後的名古屋早晨。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>11:00 名古屋港水族館 或 自由行程</h4><p><strong>路線A：名古屋港水族館</strong> — 虎鯨和海豚表演超震撼（門票 ¥2,030）。<br><strong>路線B：自由行程</strong> — 補買藥妝、回訪喜歡的景點或咖啡廳。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>13:30 午餐：餡掛義大利麵</h4><p>最後一餐名古屋美食！前往<strong>ヨコイ (Yokoi)</strong>品嚐名古屋獨創的<strong>餡掛義大利麵</strong>，粗麵配濃稠番茄醬汁。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>15:00 榮商圈最後血拼</h4><p>因為是深夜班機，下午還有充裕時間！可至榮區的唐吉訶德、松本清做最後的藥妝補貨，或找間咖啡廳休息。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>17:30 飯店取行李 → 前往機場</h4><p>回飯店取行李，搭乘名鐵或機場巴士前往中部國際機場（車程約50分鐘）。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>18:30 機場巡禮 & 晚餐</h4><p>中部機場的<strong>「提燈橫丁」</strong>非常好逛！最後補貨機場限定伴手禮，並在機場享用<strong>矢場とん (味噌豬排)</strong>或棊子麵作為完美句點。</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>✈️ 22:34 樂桃返台</h4><p>搭乘<strong>樂桃航空 (Peach)</strong> 深夜班機，結束充實的名古屋之旅！🎌 (預計抵達台灣時間為隔日 12:55+1)</p></div></div>
-    </div>
-  </div>
+  <div class="day-body"><div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>09:00 沖繩早午餐</h4><p>在飯店附近享用悠閒早午餐，感受沖繩慢活步調。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>10:30 還車 / 市區散步</h4><p>歸還租車，到<strong>壺屋通</strong>看沖繩陶器，或 DFS 免稅店逛逛。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>12:00 午餐</h4><p>推薦<strong>花笠食堂</strong>沖繩定食，或牧志市場二樓海鮮。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>14:00 國際通最後補貨</h4><p>走訪<strong>唐吉訶德</strong>和各伴手禮店做最後掃貨。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>17:30 飯店取行李 → 機場</h4><p>搭<strong>Yui Rail</strong>前往那霸機場（約 15 分鐘）。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>18:30 機場晚餐</h4><p>推薦<strong>A&amp;W 漢堡</strong>（沖繩限定速食）或機場沖繩蕎麥麵。</p></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>✈️ 22:34 樂桃返台</h4><p>搭乘<strong>樂桃航空</strong>深夜班機返台，沖繩之旅圓滿結束！🌺 (隔日 12:55+1 抵達)</p></div></div>
+  </div></div>
 </article>
 </div>
-
 <div id="tab-reco" class="tab-content">
-
 <div class="mini-tabs" style="justify-content:center; margin-bottom:0.5rem;">
   <button class="mini-tab-btn active" onclick="openMiniTab(this, 'reco-food', 'reco-sub')">🍜 美食</button>
   <button class="mini-tab-btn" onclick="openMiniTab(this, 'reco-spots', 'reco-sub')">📍 景點</button>
   <button class="mini-tab-btn" onclick="openMiniTab(this, 'reco-gifts', 'reco-sub')">🎁 伴手禮</button>
 </div>
-
 <div id="reco-food" class="mini-tab-content reco-sub-content active">
 <section class="reco-chapter">
-  <div class="chapter-header"><span class="ch-label">GOURMET</span><h2>名古屋必吃美食推薦</h2></div>
+  <div class="chapter-header"><span class="ch-label">GOURMET</span><h2>沖繩必吃美食推薦</h2></div>
   <div class="reco-grid">
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=600&q=80" alt="鰻魚飯三吃"><div class="reco-body"><h4>鰻魚飯三吃 (ひつまぶし)</h4><p class="reco-where">📍 熱田蓬萊軒 / まるや本店</p><p>名古屋第一名物！先吃原味、再加蔥花山葵、最後用高湯泡成茶泡飯，三種吃法一次滿足。預算約 ¥3,500-4,500。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" alt="味噌豬排"><div class="reco-body"><h4>味噌炸豬排 (味噌カツ)</h4><p class="reco-where">📍 矢場とん (矢場町本店)</p><p>濃郁八丁味噌醬汁淋在酥脆炸豬排上，鹹甜入味超下飯。名古屋車站也有分店，排隊名店！預算約 ¥1,500-2,000。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=600&q=80" alt="手羽先"><div class="reco-body"><h4>手羽先 (炸雞翅)</h4><p class="reco-where">📍 世界の山ちゃん / 風來坊</p><p>外酥內嫩、胡椒香氣十足的名古屋式炸雞翅，配啤酒絕配！居酒屋必點。預算約 ¥500-800/份。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="台灣拉麵"><div class="reco-body"><h4>台灣拉麵</h4><p class="reco-where">📍 味仙 (今池本店 / 矢場町店)</p><p>其實是名古屋原創！辣肉燥搭配韭菜，重口味超過癮。可選「美國人口味 (加辣)」或「義大利人口味 (減辣)」。預算約 ¥850。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?auto=format&fit=crop&w=600&q=80" alt="味噌煮込みうどん"><div class="reco-body"><h4>味噌鍋燒烏龍麵</h4><p class="reco-where">📍 山本屋總本家 / 山本屋本店</p><p>用八丁味噌熬煮的濃厚湯底，搭配彈牙到近乎硬的手打烏龍麵。冬天必吃暖胃料理！預算約 ¥1,200-1,800。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Morning Service"><div class="reco-body"><h4>Morning Service 早餐</h4><p class="reco-where">📍 客美多咖啡 (コメダ) / BUCYO Coffee</p><p>名古屋獨有文化：點一杯飲料就送厚片吐司和水煮蛋！客美多的招牌「シロノワール」丹麥鬆餅也必嚐。預算約 ¥500-800。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1617196034738-26c5f7c977ce?auto=format&fit=crop&w=600&q=80" alt="棊子麵"><div class="reco-body"><h4>棊子麵 (きしめん)</h4><p class="reco-where">📍 名古屋車站月台立食 / 宮きしめん</p><p>寬扁如絲帶的手打麵條，口感滑順。車站月台上就有立食店，搭配柴魚高湯和油豆腐，是在地人的快速午餐首選。預算約 ¥400-700。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80" alt="天むす"><div class="reco-body"><h4>天むす (天婦羅飯糰)</h4><p class="reco-where">📍 地雷也 / 千壽</p><p>小巧可愛的炸蝦天婦羅包在鹽味飯糰裡，一口一個超方便！通常5顆一組販售，很適合當午餐或邊走邊吃的點心。預算約 ¥700-900。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=600&q=80" alt="餡掛義大利麵"><div class="reco-body"><h4>餡掛義大利麵 (あんかけスパ)</h4><p class="reco-where">📍 ヨコイ (Yokoi) / チャオ (Ciao)</p><p>名古屋獨創的和洋混搭料理！粗麵條配上胡椒辣味的濃稠番茄醬汁，加上炸豬排或香腸等配料，份量十足。預算約 ¥900-1,200。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=600&q=80" alt="小倉吐司"><div class="reco-body"><h4>小倉紅豆吐司 (小倉トースト)</h4><p class="reco-where">📍 客美多咖啡 / 各喫茶店</p><p>烤得酥脆的厚片吐司塗上奶油和甜紅豆餡，甜鹹交織的名古屋經典早餐。搭配 Morning Service 點飲料就能免費享用！預算約 ¥0-400。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80" alt="沖繩蕎麥麵"><div class="reco-body"><h4>沖繩蕎麥麵 (沖縄そば)</h4><p class="reco-where">📍 首里そば / 岸本食堂</p><p>小麥粉製的Q彈粗麵，搭配豬骨柴魚高湯與滷三層肉，沖繩靈魂麵食。約 ¥700-900。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="塔可飯"><div class="reco-body"><h4>塔可飯 (Taco Rice)</h4><p class="reco-where">📍 King Tacos / Charlie's</p><p>沖繩獨創美墨日混血料理！辣肉醬、生菜、起司鋪在白飯上，份量十足。約 ¥500-800。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1627909384501-c637fa9bfa11?auto=format&fit=crop&w=600&q=80" alt="苦瓜炒蛋"><div class="reco-body"><h4>苦瓜炒蛋 (ゴーヤーチャンプルー)</h4><p class="reco-where">📍 各家居酒屋 / 花笠食堂</p><p>沖繩最經典家常菜，清脆微苦的苦瓜與島豆腐、豬肉、雞蛋拌炒。約 ¥600-900。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Agu豬"><div class="reco-body"><h4>Agu 豬涮涮鍋</h4><p class="reco-where">📍 百年古家 大家 / 恩納村</p><p>沖繩特有黑豬「Agu 豬」，肉質軟嫩、油脂清甜。涮涮鍋或燒肉都極品。約 ¥3,000-5,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?auto=format&fit=crop&w=600&q=80" alt="海葡萄"><div class="reco-body"><h4>海葡萄</h4><p class="reco-where">📍 牧志公設市場 / 居酒屋</p><p>「綠色魚子醬」，咬下去有啵啵爆漿口感，帶有大海鹹鮮味，沾醋醬油最棒。約 ¥500-800。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=600&q=80" alt="牛排"><div class="reco-body"><h4>美式牛排</h4><p class="reco-where">📍 傑克牛排館 / 美國村</p><p>受美軍文化影響，沖繩有吃牛排當宵夜的習慣。鐵板牛排配 A1 醬，肉食控必吃。約 ¥2,000-4,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1570197781417-0a82375c9371?auto=format&fit=crop&w=600&q=80" alt="Blue Seal"><div class="reco-body"><h4>Blue Seal 冰淇淋</h4><p class="reco-where">📍 國際通 / 美國村 / 到處都有</p><p>沖繩限定口味：紅芋、鹽金楚糕、香檸(Shikuwasa)。約 ¥300-500。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1605333396914-239bd010ce1d?auto=format&fit=crop&w=600&q=80" alt="沙翁"><div class="reco-body"><h4>沙翁 (サーターアンダギー)</h4><p class="reco-where">📍 牧志市場 / 步(あゆみ)</p><p>沖繩傳統炸點心，外酥內軟，有黑糖、紅芋等口味。約 ¥100-200/顆。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1580959419139-4d691ee9eb24?auto=format&fit=crop&w=600&q=80" alt="天婦羅"><div class="reco-body"><h4>沖繩天婦羅</h4><p class="reco-where">📍 奧武島 / 國際通周邊</p><p>麵衣較厚且有調味，像熱狗球。推薦魚肉和花枝口味。約 ¥100-200/個。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1627308595229-7830f5c90683?auto=format&fit=crop&w=600&q=80" alt="泡盛"><div class="reco-body"><h4>泡盛 (Awamori)</h4><p class="reco-where">📍 各大居酒屋 / 專賣店</p><p>沖繩特有蒸餾酒，用泰國米和黑麴菌釀造，搭配海葡萄絕配！約 ¥500/杯。</p></div></div>
   </div>
 </section>
 </div>
-
 <div id="reco-spots" class="mini-tab-content reco-sub-content">
 <section class="reco-chapter">
   <div class="chapter-header"><span class="ch-label">SPOTS</span><h2>推薦景點精選</h2></div>
   <div class="reco-grid">
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1580651315530-69c8e0026377?auto=format&fit=crop&w=600&q=80" alt="名古屋城"><div class="reco-body"><h4>名古屋城</h4><p class="reco-where">📍 地鐵名城線 市役所站</p><p>金鯱閃耀的百大名城，本丸御殿的障壁畫豪華絕倫。旁邊「金鯱橫丁」可以一次吃遍名古屋美食。門票 ¥500。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="犬山城"><div class="reco-body"><h4>犬山城 &amp; 城下町</h4><p class="reco-where">📍 名鐵犬山線 犬山遊園站</p><p>日本國寶四城之一，天守閣可俯瞰木曾川。城下町的三色丸子、飛驒牛壽司和三光稻荷神社粉紅繪馬超好拍！</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=600&q=80" alt="名古屋港水族館"><div class="reco-body"><h4>名古屋港水族館</h4><p class="reco-where">📍 地鐵名港線 名古屋港站</p><p>日本最大級水族館！虎鯨和海豚表演超震撼，還有南極觀測船「富士號」可參觀。適合雨天備案。門票 ¥2,030。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="豐田產業技術紀念館"><div class="reco-body"><h4>豐田產業技術紀念館</h4><p class="reco-where">📍 地鐵東山線 龜島站</p><p>從紡織機到最新汽車科技的演進，有大量互動展示。就算不是車迷也會覺得很有趣！門票 ¥500，CP值超高。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1618164435735-413d3b066c9a?auto=format&fit=crop&w=600&q=80" alt="吉卜力公園"><div class="reco-body"><h4>吉卜力公園</h4><p class="reco-where">📍 愛・地球博紀念公園 (リニモ)</p><p>宮崎駿迷必訪聖地！霍爾的移動城堡、龍貓森林等場景還原。⚠️ 需提前兩個月在官網搶票。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=600&q=80" alt="熱田神宮"><div class="reco-body"><h4>熱田神宮</h4><p class="reco-where">📍 名鐵神宮前站</p><p>供奉三神器之一「草薙劍」的千年古社，森林參道靜謐莊嚴。參拜後可在門前町吃蓬萊軒鰻魚飯。免費參拜。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80" alt="綠洲21"><div class="reco-body"><h4>綠洲21 &amp; MIRAI TOWER</h4><p class="reco-where">📍 地鐵栄站</p><p>宇宙船造型的未來感建築，夜晚打燈後美得像科幻電影場景！旁邊的 MIRAI TOWER 是日本最古電視塔，登頂可看全市夜景。免費入場，登塔 ¥900。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1542052125323-e69ad37a47c2?auto=format&fit=crop&w=600&q=80" alt="大須商店街"><div class="reco-body"><h4>大須商店街</h4><p class="reco-where">📍 地鐵上前津站 / 大須觀音站</p><p>名古屋的「原宿」！平價藥妆、二手衣物、動漫周邊、各國小吃應有盡有。營業至晚上8點，建議下午前往。免費逛街。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="磁浮列車鐵道館"><div class="reco-body"><h4>磁浮列車鐵道館 (リニア・鉄道館)</h4><p class="reco-where">📍 金城埠線 金城埠站</p><p>鐵道迷必訪！展示真實的新幹線、磁浮列車與蒸汽火車，還有超大型模型鐵道場景。門票 ¥1,000，親子同遊也很適合。</p></div></div>
-    <div class="reco-card"><img src="https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=600&q=80" alt="寶可夢中心"><div class="reco-body"><h4>寶可夢中心 Nagoya</h4><p class="reco-where">📍 榮區 松坂屋百貨本館 5F</p><p>名古屋限定的穿金鴱裝皮卡丘、中日龍球衣皮卡丘等外地買不到！各種文具、零食和玩偶應有盡有，寶可夢迷必訪。免費入場。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=600&q=80" alt="水族館"><div class="reco-body"><h4>美麗海水族館</h4><p class="reco-where">📍 北部 本部町</p><p>世界最大級水槽「黑潮之海」，巨大鯨鯊和鬼蝠魟悠游眼前。門票 ¥2,180。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80" alt="首里城"><div class="reco-body"><h4>首里城公園</h4><p class="reco-where">📍 那霸市 首里站</p><p>琉球王國世界文化遺產，正殿正進行公開復原，城牆與城門依然壯麗。門票 ¥400。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1600868843232-a9e96196ff36?auto=format&fit=crop&w=600&q=80" alt="古宇利島"><div class="reco-body"><h4>古宇利島</h4><p class="reco-where">📍 北部 今歸仁村</p><p>「戀之島」，開過古宇利大橋享受頂級透明藍海，心型岩必拍。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1559803859-968600115000?auto=format&fit=crop&w=600&q=80" alt="美國村"><div class="reco-body"><h4>北谷美國村</h4><p class="reco-where">📍 中部 北谷町</p><p>濃郁美式西海岸風情，色彩鮮豔建築、無數小店與看海咖啡廳，黃昏最美。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1542052125323-e69ad37a47c2?auto=format&fit=crop&w=600&q=80" alt="國際通"><div class="reco-body"><h4>國際通</h4><p class="reco-where">📍 那霸 縣廳前站/牧志站</p><p>「奇蹟的一英里」，土產店、餐廳、藥妝店到百貨一應俱全。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1579709325988-82ab8140cb43?auto=format&fit=crop&w=600&q=80" alt="萬座毛"><div class="reco-body"><h4>萬座毛</h4><p class="reco-where">📍 中部 恩納村</p><p>大象鼻子形狀的珊瑚礁斷崖，欣賞東海夕陽的絕佳景點。門票 ¥100。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80" alt="瀨長島"><div class="reco-body"><h4>瀨長島 Umikaji Terrace</h4><p class="reco-where">📍 南部 (近機場)</p><p>「沖繩小希臘」，白色階梯建築面朝大海，可近距離看飛機起降。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=80" alt="青之洞窟"><div class="reco-body"><h4>真榮田岬 青之洞窟</h4><p class="reco-where">📍 中部 恩納村</p><p>浮潛聖地！洞窟內海水反射出神祕藍光，參加體驗團即可輕鬆飽覽。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1627308595229-7830f5c90683?auto=format&fit=crop&w=600&q=80" alt="波上宮"><div class="reco-body"><h4>波上宮</h4><p class="reco-where">📍 那霸市區</p><p>建在珊瑚礁懸崖上的琉球八社之首，旁邊是那霸唯一海水浴場。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=600&q=80" alt="福木林道"><div class="reco-body"><h4>備瀨福木林道</h4><p class="reco-where">📍 北部 (水族館旁)</p><p>數千棵福木形成天然綠色隧道，陽光灑落時夢幻。適合租腳踏車悠閒騎行。</p></div></div>
   </div>
 </section>
 </div>
-
 <div id="reco-gifts" class="mini-tab-content reco-sub-content">
 <section class="reco-chapter">
   <div class="chapter-header"><span class="ch-label">SOUVENIRS</span><h2>推薦伴手禮必買</h2></div>
   <div class="reco-grid">
-    <div class="reco-card"><img src="images/gift_senbei.png" alt="蝦餅"><div class="reco-body"><h4>坂角總本舖「ゆかり」蝦餅</h4><p class="reco-where">📍 名古屋車站 / 中部機場</p><p>名古屋No.1伴手禮！整隻蝦壓製的薄脆蝦餅，鮮味濃郁。送禮自用兩相宜，包裝也很精美。約 ¥1,000-2,000。</p></div></div>
-    <div class="reco-card"><img src="images/gift_uiro.png" alt="外郎"><div class="reco-body"><h4>青柳總本家「ういろう」外郎</h4><p class="reco-where">📍 名古屋車站 / 大須</p><p>名古屋傳統和菓子，口感類似年糕但更細緻，有抹茶、小豆、櫻花等多種口味。一口大小超方便。約 ¥600-1,200。</p></div></div>
-    <div class="reco-card"><img src="images/gift_rusk.png" alt="小倉吐司脆餅"><div class="reco-body"><h4>小倉吐司脆餅 (ラスク)</h4><p class="reco-where">📍 名古屋車站地下街</p><p>把名古屋名物小倉紅豆吐司做成酥脆餅乾！奶油和紅豆的絕妙組合，輕巧好攜帶，送同事最推薦。約 ¥800-1,000。</p></div></div>
-    <div class="reco-card"><img src="images/gift_snacks.png" alt="限定零食"><div class="reco-body"><h4>名古屋限定零食</h4><p class="reco-where">📍 車站 / 便利商店 / 機場</p><p>味噌口味 KitKat、蝦餅口味 Pocky、手羽先口味 Pretz 等名古屋限定版。超市和便利商店就買得到！約 ¥300-600。</p></div></div>
-    <div class="reco-card"><img src="images/gift_pokemon.png" alt="寶可夢中心"><div class="reco-body"><h4>寶可夢中心限定商品</h4><p class="reco-where">📍 松坂屋百貨本館 5F (榮)</p><p>名古屋限定的穿金鯱裝皮卡丘、中日龍球衣皮卡丘等，外地買不到！還有各種文具、零食和玩偶。價格不等。</p></div></div>
-    <div class="reco-card"><img src="images/gift_cosmetics.png" alt="藥妝"><div class="reco-body"><h4>藥妝 &amp; 美妝</h4><p class="reco-where">📍 大須商店街 / 榮唐吉訶德</p><p>日本藥妝永遠是必買清單！推薦在大須商店街的藥妝店比價，價格通常比榮區更便宜。滿 ¥5,000 可免稅。</p></div></div>
-    <div class="reco-card"><img src="images/gift_frog.png" alt="青蛙饋頭"><div class="reco-body"><h4>青柳總本家「カエルまんじゅう」</h4><p class="reco-where">📍 名古屋車站 / 中部機場</p><p>超可愛的青蛙造型饋頭，細膩的紅豆餡口感溫潤。外觀討喜送人必選，是名古屋車站最人氣的和菓子伴手禮之一。約 ¥600-1,000。</p></div></div>
-    <div class="reco-card"><img src="images/gift_shachihoko.png" alt="金鴱周邊"><div class="reco-body"><h4>名古屋金鴱周邊商品</h4><p class="reco-where">📍 名古屋城 / 金鴱橫丁</p><p>金鴱是名古屋的象徵！金鴱造型的鑰匙圈、磁鐵、資料夾等小物，價格親民又有特色。約 ¥300-1,500。</p></div></div>
-    <div class="reco-card"><img src="images/gift_tokoname.png" alt="常滑燒"><div class="reco-body"><h4>常滑燒 (急須)茶具</h4><p class="reco-where">📍 名古屋車站 / 中部機場</p><p>愛知縣常滑市產的傳統急須茶壺，日本茶道必備。小型茶壺輕巧好攜帶，送給愛喝茶的朋友超有心意。約 ¥2,000-5,000。</p></div></div>
-    <div class="reco-card"><img src="images/gift_airport.png" alt="中部機場限定"><div class="reco-body"><h4>中部機場限定商品</h4><p class="reco-where">📍 中部國際機場 「提燈橫丁」</p><p>機場內的「提燈橫丁」和「煉瓦通」商店街非常好逛！有許多機場限定的包裝和口味，最後一站補貨的好機會。價格不等。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="紅芋塔"><div class="reco-body"><h4>御菓子御殿 紅芋塔</h4><p class="reco-where">📍 國際通 / 機場</p><p>沖繩最經典伴手禮！使用紅芋製成，甜度適中。送辦公室絕對不出錯。約 ¥1,000-1,500。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="金楚糕"><div class="reco-body"><h4>雪鹽金楚糕 (ちんすこう)</h4><p class="reco-where">📍 國際通 / 機場 / 超市</p><p>琉球傳統點心，酥脆短餅乾口感。推薦加入宮古島雪鹽的版本。約 ¥600-1,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=600&q=80" alt="黑糖"><div class="reco-body"><h4>沖繩黑糖</h4><p class="reco-where">📍 各大超市 / 伴手禮店</p><p>富含礦物質，有純黑糖塊，也有堅果、花生口味黑糖零食。約 ¥300-800。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="辣油"><div class="reco-body"><h4>石垣島辣油</h4><p class="reco-where">📍 伴手禮店 / 驚安殿堂</p><p>超人氣調味料！蒜香和辛香料層次感，拌麵配飯超提味。約 ¥1,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1528698827591-e19cef791f71?auto=format&fit=crop&w=600&q=80" alt="風獅爺"><div class="reco-body"><h4>風獅爺 (Shisa) 陶器</h4><p class="reco-where">📍 國際通 / 壺屋通</p><p>沖繩守護神，買一對擺在家裡祈求平安又能裝飾。價格不等。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt="面膜"><div class="reco-body"><h4>LuLuLun 沖繩限定面膜</h4><p class="reco-where">📍 藥妝店 / 伴手禮店</p><p>有苦瓜、扶桑花、香檬等限定口味，適合分送女性朋友。約 ¥1,600。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="35咖啡"><div class="reco-body"><h4>35 COFFEE</h4><p class="reco-where">📍 機場 / 單軌車站</p><p>用風化珊瑚烘焙的特色咖啡，部分收益用於珊瑚復育。約 ¥1,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1627308595229-7830f5c90683?auto=format&fit=crop&w=600&q=80" alt="泡盛"><div class="reco-body"><h4>迷你泡盛酒</h4><p class="reco-where">📍 國際通酒專賣店 / 機場</p><p>造型可愛的小瓶裝泡盛，或琉球玻璃瓶款式，送酒友最適合。約 ¥500-1,500。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="海鹽"><div class="reco-body"><h4>沖繩海鹽 (ぬちまーす)</h4><p class="reco-where">📍 超市 / 機場</p><p>宮古島產的高級海鹽，礦物質含量世界紀錄。送料理愛好者超有品味。約 ¥500-1,000。</p></div></div>
+    <div class="reco-card"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80" alt="T-shirt"><div class="reco-body"><h4>沖繩風 T-shirt</h4><p class="reco-where">📍 國際通服飾店</p><p>印有 Orion 啤酒 Logo 或苦瓜圖案的T-shirt，充滿度假風情。約 ¥2,000-3,000。</p></div></div>
   </div>
 </section>
 </div>
 </div>
-
 <div id="tab-info" class="tab-content">
-<section class="budget-chapter">
-  <div class="chapter-header"><span class="ch-label">BUDGET</span><h2>名古屋 <span data-bind="totalDays"></span>天<span data-bind="totalNights"></span>夜 預算估算 (單人)</h2></div>
-  <p class="budget-intro">此為以「高質感、舒適」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
+<section class="tips-chapter">
+  <div class="chapter-header"><span class="ch-label">BUDGET</span><h2>沖繩 <span data-bind="totalDays"></span>天<span data-bind="totalNights"></span>夜 預算估算 (單人)</h2></div>
+  <p class="budget-intro">此為以「自駕、舒適度假」為前提的預算估算，皆以台幣 (TWD) 計算：</p>
   <div class="budget-grid">
-    <div class="budget-card"><div class="budget-icon">✈️</div><h4>來回機票</h4><div class="budget-amount">$11,000 - $16,000</div><p>樂桃航空，含去回託運行李</p></div>
-    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (<span data-bind="totalNights"></span>晚)</h4><div class="budget-amount">$10,000 - $12,000</div><p>單人約 $2,500-$3,000/晚</p></div>
-    <div class="budget-card"><div class="budget-icon">🚆</div><h4>交通費</h4><div class="budget-amount">$2,000 - $2,500</div><p>機場巴士、市區地鐵、犬山來回</p></div>
-    <div class="budget-card"><div class="budget-icon">🍣</div><h4>飲食費 (<span data-bind="totalDays"></span>天)</h4><div class="budget-amount">$6,000 - $8,000</div><p>含鰻魚飯、飛驒牛、手羽先等</p></div>
-    <div class="budget-card"><div class="budget-icon">🎫</div><h4>門票與娛樂</h4><div class="budget-amount">$1,000 - $2,000</div><p>名古屋城、水族館、豐田紀念館等</p></div>
-    <div class="budget-card total"><div class="budget-icon">🌟</div><h4>總計 (不含購物)</h4><div class="budget-amount">約 $30,000 - $40,500</div><p>準備 $35,000 左右即可享受非常有質感的旅行！</p></div>
+    <div class="budget-card"><div class="budget-icon">✈️</div><h4>來回機票</h4><div class="budget-amount">$8,000 - $12,000</div><p>樂桃航空，含託運行李</p></div>
+    <div class="budget-card"><div class="budget-icon">🏨</div><h4>住宿 (<span data-bind="totalNights"></span>晚)</h4><div class="budget-amount">$4,500 - $6,000</div><p>單人約 $1,500-$2,000/晚</p></div>
+    <div class="budget-card"><div class="budget-icon">🚗</div><h4>交通與租車</h4><div class="budget-amount">$3,000 - $4,000</div><p>4人分攤租車費、油錢、高速、單軌</p></div>
+    <div class="budget-card"><div class="budget-icon">🥩</div><h4>飲食費 (<span data-bind="totalDays"></span>天)</h4><div class="budget-amount">$5,000 - $7,000</div><p>含Agu豬、牛排、居酒屋、海鮮</p></div>
+    <div class="budget-card"><div class="budget-icon">🎫</div><h4>門票與娛樂</h4><div class="budget-amount">$1,000 - $1,500</div><p>美麗海水族館、首里城等</p></div>
+    <div class="budget-card total"><div class="budget-icon">🌟</div><h4>總計 (不含購物)</h4><div class="budget-amount">約 $21,500 - $30,500</div><p>準備 $25,000 左右即可享受充實沖繩之旅！</p></div>
   </div>
-  <p class="budget-note">💡 購物/藥妝/寶可夢中心消費因人而異，建議另外抓 $5,000 - $10,000 以上的購物金。</p>
+  <p class="budget-note">💡 購物金因人而異，建議另外抓 $5,000 - $10,000 以上的藥妝伴手禮預算。</p>
 </section>
-
 <section class="tips-chapter">
   <div class="chapter-header"><span class="ch-label">TIPS</span><h2>旅行實用小提示</h2></div>
   <div class="tips-grid">
-    <div class="tip-card"><div class="tip-icon">🎒</div><h4>登機行李策略</h4><p>樂桃提供 7 公斤（最多 2 件）手提行李。因為 7 公斤非常容易超重，去程務必精簡，<strong>回程強烈建議加購託運行李</strong>，以免在機場被加收高額費用。</p></div>
-    <div class="tip-card"><div class="tip-icon">🚌</div><h4>機場巴士注意</h4><p>利木津巴士往名古屋車站路線目前停駛中！請選擇住在<strong>「榮」</strong>或<strong>「伏見」</strong>的飯店。巴士可使用 Suica/ICOCA 等 IC 卡。</p></div>
-    <div class="tip-card"><div class="tip-icon">💳</div><h4>交通卡與支付</h4><p>一張 iPhone 內建的 Suica 即可搭乘所有地鐵與名鐵。大部分商店支援 Apple Pay 或信用卡，現金不需帶太多。</p></div>
-    <div class="tip-card"><div class="tip-icon">🛒</div><h4>免稅與購物</h4><p>購物滿 5,000 日圓即可免稅，記得攜帶<strong>實體護照</strong>。大須商店街營業至晚上 8 點，建議下午前往。</p></div>
-    <div class="tip-card"><div class="tip-icon">🌧️</div><h4>雨天備案</h4><p>6月梅雨季，下雨時可安排地下街行程（名古屋車站地下街非常龐大），或安排水族館、豐田紀念館等室內景點。</p></div>
+    <div class="tip-card"><div class="tip-icon">🚗</div><h4>租車自駕準備</h4><p>務必攜帶<strong>台灣駕照正本</strong>與<strong>駕照日文譯本</strong>（至監理所辦理，不是國際駕照）。沖繩為右駕，請小心駕駛。</p></div>
+    <div class="tip-card"><div class="tip-icon">🎒</div><h4>登機行李策略</h4><p>樂桃提供 7 公斤手提行李。7kg 非常容易超重，<strong>回程強烈建議加購託運行李</strong>。</p></div>
+    <div class="tip-card"><div class="tip-icon">☀️</div><h4>防曬與天氣</h4><p>沖繩紫外線極強！6月已是炎夏，請準備高係數防曬乳、太陽眼鏡與帽子。下海建議用<strong>海洋友善防曬乳</strong>。</p></div>
+    <div class="tip-card"><div class="tip-icon">💳</div><h4>支付方式</h4><p>部分傳統市場或小吃店仍<strong>只收現金</strong>，建議多換一些日幣現鈔。</p></div>
+    <div class="tip-card"><div class="tip-icon">🛒</div><h4>免稅與購物</h4><p>購物滿 5,000 日圓即可免稅，記得攜帶<strong>實體護照</strong>。國際通藥妝店可多比價。</p></div>
   </div>
 </section>
-
 <section class="tips-chapter">
-  <div class="chapter-header"><span class="ch-label">TRANSPORT</span><h2>機場 ⇌ 市區交通規劃 (4人同行大對決)</h2></div>
-  <p class="budget-intro" style="margin-top: -10px; margin-bottom: 20px;">以 4 位成人為基礎，換算成「單人平均單程」台幣 (TWD) 進行對比，找出最佳黃金交叉點：</p>
+  <div class="chapter-header"><span class="ch-label">TRANSPORT</span><h2>那霸機場 ⇌ 市區交通規劃</h2></div>
   <div class="transport-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-    <div class="transport-card">
-      <h4>🚆 名鐵電車 (μ-SKY)</h4>
-      <div class="price">每人平均約 $262 台幣</div>
-      <ul>
-        <li><strong>優點：</strong>最快 28 分鐘進市區，絕不塞車。</li>
-        <li><strong>缺點：</strong>提著 4 個大行李箱在車站轉乘地鐵會崩潰。</li>
-        <li><strong>總評：</strong>最便宜，但最費體力。</li>
-      </ul>
-    </div>
-    <div class="transport-card">
-      <h4>🚌 利木津機場巴士</h4>
-      <div class="price">每人平均約 $275 台幣</div>
-      <ul>
-        <li><strong>優點：</strong>行李交給司機放行李艙，保證有位。</li>
-        <li><strong>缺點：</strong>下車點固定，可能還要自己拉行李走一段。</li>
-        <li><strong>總評：</strong>性價比高，機動性普通。</li>
-      </ul>
-    </div>
-    <div class="transport-card">
-      <h4>🚐 NearMe (AI 共乘)</h4>
-      <div class="price">每人平均約 $625 台幣</div>
-      <ul>
-        <li><strong>優點：</strong>直達飯店門口，免搬行李。</li>
-        <li><strong>缺點：</strong>要跟陌生人擠，可能繞路接送別人浪費時間。</li>
-        <li><strong>總評：</strong>1-2 人搭划算，4人搭反而尷尬。</li>
-      </ul>
-    </div>
     <div class="transport-card" style="border: 2px solid #e06c75; position: relative;">
-      <span style="position: absolute; top: -10px; right: -10px; background: #e06c75; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">首選推薦</span>
-      <h4>🚕 專屬包車 (7人座)</h4>
-      <div class="price" style="color: #e06c75;">每人平均約 $650 台幣起</div>
+      <span style="position: absolute; top: -10px; right: -10px; background: #e06c75; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">市區首選</span>
+      <h4>🚝 單軌電車 (Yui Rail)</h4>
+      <div class="price" style="color: #e06c75;">約 ¥270-300 / 最穩不塞車</div>
       <ul>
-        <li><strong>優點：</strong>專車直達，空間超大，完全不用等別人。</li>
-        <li><strong>缺點：</strong>需事先預訂。</li>
-        <li><strong>總評：</strong>⭐ 單人只比共乘貴 25 元！4 人同行的黃金解法！(Klook/KKday)</li>
+        <li><strong>優點：</strong>機場直通，15 分鐘到國際通。</li>
+        <li><strong>缺點：</strong>離車站遠的飯店推行李較辛苦。</li>
+        <li><strong>總評：</strong>⭐ 住國際通附近的最佳選擇。</li>
+      </ul>
+    </div>
+    <div class="transport-card">
+      <h4>🚕 計程車</h4>
+      <div class="price">約 ¥1,500-2,000 / 車</div>
+      <ul>
+        <li><strong>優點：</strong>直達飯店門口，免扛行李。</li>
+        <li><strong>缺點：</strong>尖峰時刻可能塞車。</li>
+        <li><strong>總評：</strong>3-4 人分攤很划算。</li>
+      </ul>
+    </div>
+    <div class="transport-card">
+      <h4>🚗 機場租車直接出發</h4>
+      <div class="price">視租車公司與天數而定</div>
+      <ul>
+        <li><strong>優點：</strong>下機搭接駁到租車公司，直接開車。</li>
+        <li><strong>缺點：</strong>租車手續約需 1-2 小時。</li>
+        <li><strong>總評：</strong>適合直奔中北部的旅客。</li>
       </ul>
     </div>
   </div>
 </section>
-
 <section class="tips-chapter">
-  <div class="chapter-header"><span class="ch-label">MAP</span><h2>名古屋地鐵路線圖</h2></div>
+  <div class="chapter-header"><span class="ch-label">MAP</span><h2>沖繩單軌電車路線圖</h2></div>
   <div style="text-align: center; margin-top: 1.5rem;">
     <div class="map-wrapper">
-      <img src="images/subway_map.png" alt="名古屋地鐵路線圖" class="transit-map-img">
-      <div class="hotel-pin">📍 目前飯店位置 (伏見)</div>
+      <img src="images/subway_map.png" alt="沖繩單軌電車路線圖" class="transit-map-img">
+      <div class="hotel-pin" style="left: 45%; top: 55%;">📍 飯店位置 (國際通)</div>
     </div>
     <p style="margin-top:1rem; font-size:0.85rem; color:var(--text2);">
-      🗺️ <a href="https://www.kotsu.city.nagoya.jp/jp/pc/subway/routemap.html" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">名古屋市交通局官網</a>
-      ｜ 🚇 <a href="https://www.kotsu.city.nagoya.jp/jp/pc/route/" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">互動式乘換導航</a>
+      🗺️ <a href="https://www.yui-rail.co.jp/tc/routemap/" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:underline;">Yui Rail 官網路線圖</a>
     </p>
   </div>
 </section>
 </div>
-
 </main>
-
 <footer class="book-footer">
-  <p><span data-bind="year"></span> 名古屋自由行 — Made with ❤️</p>
+  <p><span data-bind="year"></span> 沖繩自由行 — Made with ❤️</p>
   <p class="footer-updated" data-bind="lastUpdated"></p>
 </footer>
-
 <script>
-// ===== ✏️ 行程設定：改這裡就好，全頁面自動更新 =====
 const TRIP_CONFIG = {
-  year: 2026,
-  startMonth: 6,
-  startDay: 18,
-  startWeekday: '四',
-  endMonth: 6,
-  endDay: 21,
-  endWeekday: '日',
-  totalDays: 4,
-  totalNights: 3,
-  slogan: '質感住宿 ‧ 深度慢遊 ‧ 美食巡禮',
+  year: 2026, startMonth: 6, startDay: 18, startWeekday: '四',
+  endMonth: 6, endDay: 21, endWeekday: '日', totalDays: 4, totalNights: 3,
+  slogan: '碧海藍天 ‧ 島嶼慢活 ‧ 美食探險',
   airline: '樂桃航空 (Peach Aviation)',
-  airlineTip: '💡 去程：6/18 02:10 - 06:05\n💡 回程：6/21 22:34 - 12:55+1',
-  lastUpdated: '2026年05月19日 17時07分',
+  airlineTip: '💡 去程：6/18 桃園→那霸\n💡 回程：6/21 那霸→桃園',
+  lastUpdated: '2026年05月19日 22時00分',
 };
-// ===== 以上為設定區 =====
-
 function applyConfig() {
   const C = TRIP_CONFIG;
   const bindings = {
     year: C.year,
     coverDate: `${C.startMonth}.${C.startDay} — ${C.endMonth}.${C.endDay}`,
     dateRange: `${C.year}年${C.startMonth}月${C.startDay}日 (${C.startWeekday}) ~ ${C.endMonth}月${C.endDay}日 (${C.endWeekday})`,
-    totalDays: C.totalDays,
-    totalNights: C.totalNights,
-    slogan: C.slogan,
+    totalDays: C.totalDays, totalNights: C.totalNights, slogan: C.slogan,
     airlineInfo: `${C.airline}\n${C.airlineTip}`,
     lastUpdated: `最後更新：${C.lastUpdated}`,
   };
@@ -330,20 +252,13 @@ function applyConfig() {
     if (bindings[key] !== undefined) el.innerHTML = String(bindings[key]).replace(/\n/g, '<br>');
   });
 }
-
-
-        function openMiniTab(btn, tabId, groupName) {
-            // Find all content in this group and hide them
-            document.querySelectorAll('.' + groupName + '-content').forEach(t => t.classList.remove('active'));
-            // Find all buttons in this group and remove active class
-            btn.closest('.mini-tabs').querySelectorAll('.mini-tab-btn').forEach(b => b.classList.remove('active'));
-            
-            // Show the selected content and activate button
-            document.getElementById(tabId).classList.add('active');
-            btn.classList.add('active');
-        }
-
-        function openTab(btn, tabId) {
+function openMiniTab(btn, tabId, groupName) {
+  document.querySelectorAll('.' + groupName + '-content').forEach(t => t.classList.remove('active'));
+  btn.closest('.mini-tabs').querySelectorAll('.mini-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+function openTab(btn, tabId) {
   document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
   document.querySelectorAll(".toc-btn").forEach(b => b.classList.remove("active"));
   document.getElementById(tabId).classList.add("active");
