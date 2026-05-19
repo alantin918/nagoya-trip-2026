@@ -24,6 +24,11 @@
     <button class="toc-btn active" onclick="openTab(this,'tab-4days')">📅 行程</button>
     <button class="toc-btn" onclick="openTab(this,'tab-reco')">🎯 推薦指南</button>
     <button class="toc-btn" onclick="openTab(this,'tab-info')">💡 實用資訊</button>
+    <select class="city-switcher" onchange="window.location.href=this.value" aria-label="切換城市">
+      <option value="index.html">🌺 沖繩</option>
+      <option value="tokyo.html">🗼 東京</option>
+      <option value="nagoya.html" selected>🏯 名古屋</option>
+    </select>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="切換主題">🌓</button>
   </div>
 </nav>

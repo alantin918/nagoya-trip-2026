@@ -92,8 +92,20 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); line
 .toc-btn.active { color:var(--accent); font-weight:600; }
 .toc-btn.active::after { width:60%; }
 .toc-btn:hover { color:var(--accent); }
+.city-switcher {
+  margin-left: auto;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
 .theme-toggle {
-  margin-left:auto; padding:0.6rem; font-size:1.2rem; background:none; border:none;
+  padding:0.6rem; font-size:1.2rem; background:none; border:none;
   cursor:pointer; border-radius:50%; transition:.3s;
 }
 .theme-toggle:hover { background:var(--bg2); }
