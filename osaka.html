@@ -34,12 +34,17 @@
 </nav>
 <main class="book-body">
 <div id="tab-4days" class="tab-content active">
+
+<div class="trip-toggle-container" style="text-align: center; margin: 1rem 0 2rem 0;">
+  <button class="mini-tab-btn" id="btn-5days" onclick="switchTrip('5days')">5天4夜 (6/17-6/21)</button>
+  <button class="mini-tab-btn active" id="btn-4days" onclick="switchTrip('4days')">4天3夜 (6/18-6/21)</button>
+</div>
 <section class="info-chapter">
   <div class="chapter-header"><span class="ch-label">OVERVIEW</span><h2>行程基本資訊</h2></div>
   <div class="info-grid">
     <div class="info-item"><span class="info-icon">📅</span><div><strong>旅行日期</strong><p data-bind="dateRange"></p></div></div>
     <div class="info-item"><span class="info-icon">✈️</span><div><strong>航空公司</strong><p data-bind="airlineInfo"></p></div></div>
-    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>難波 / 心齋橋 周邊飯店<br>3晚<br><small>💡 交通樞紐，美食購物天堂，前往環球影城也方便。</small></p></div></div>
+    <div class="info-item"><span class="info-icon">🏨</span><div><strong>住宿方案</strong><p>難波 / 心齋橋 周邊飯店<br><span data-bind="nightsText">3晚</span><br><small>💡 交通樞紐，美食購物天堂，前往環球影城也方便。</small></p></div></div>
   </div>
 </section>
 <article class="day-chapter">
@@ -250,6 +255,7 @@ function applyConfig() {
     totalDays: C.totalDays, totalNights: C.totalNights, slogan: C.slogan,
     airlineInfo: `${C.airline}\n${C.airlineTip}`,
     lastUpdated: `最後更新：${C.lastUpdated}`,
+    nightsText: `${C.totalNights}晚`,
   };
   document.querySelectorAll('[data-bind]').forEach(el => {
     const key = el.getAttribute('data-bind');
@@ -273,6 +279,44 @@ function toggleTheme() {
   const t = d.getAttribute("data-theme") === "dark" ? "light" : "dark";
   d.setAttribute("data-theme", t);
   localStorage.setItem("theme", t);
+}
+
+function switchTrip(type) {
+  // Update buttons
+  document.getElementById('btn-5days').classList.remove('active');
+  document.getElementById('btn-4days').classList.remove('active');
+  document.getElementById('btn-' + type).classList.add('active');
+
+  // Show/Hide DOM
+  if (type === '5days') {
+    document.getElementById('itinerary-4days').style.display = 'none';
+    document.getElementById('itinerary-5days').style.display = 'block';
+    
+    // Update config to 5 days
+    TRIP_CONFIG.startDay = 17;
+    TRIP_CONFIG.startWeekday = '三';
+    TRIP_CONFIG.totalDays = 5;
+    TRIP_CONFIG.totalNights = 4;
+    TRIP_CONFIG.airlineTip = '💡 去程：6/17 桃園→關西機場\\n💡 回程：6/21 關西機場→桃園';
+  } else {
+    document.getElementById('itinerary-5days').style.display = 'none';
+    document.getElementById('itinerary-4days').style.display = 'block';
+    
+    // Revert config to 4 days
+    TRIP_CONFIG.startDay = 18;
+    TRIP_CONFIG.startWeekday = '四';
+    TRIP_CONFIG.totalDays = 4;
+    TRIP_CONFIG.totalNights = 3;
+    TRIP_CONFIG.airlineTip = '💡 去程：6/18 桃園→關西機場\\n💡 回程：6/21 關西機場→桃園';
+  }
+  
+  applyConfig();
+  
+  // Re-observe new elements for scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); });
+  }, {threshold: 0.1});
+  document.querySelectorAll("#itinerary-" + type + " .day-chapter").forEach(el => observer.observe(el));
 }
 (function(){
   const t = localStorage.getItem("theme");
